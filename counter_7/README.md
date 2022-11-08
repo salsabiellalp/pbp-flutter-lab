@@ -1,16 +1,13 @@
-# counter_7
+# Tugas 7 Counter_7
 
-A new Flutter project.
+## Stateless widget dan stateful widget
+Stateless widget adalah widget statis dimana seluruh konfigurasi yang dimuat didalamnya telah diinisiasi sejak awal. Sedangkan Stateful widget berlaku sebaliknya dimana sifatnya adalah dinamis, sehingga widget ini dapat diperbaharui kapanpun dibutuhkan berdasarkan user actions atau ketika terjadinya perubahan data.
 
-## Getting Started
+Pada intinya Stateless Widget merupakan Widget yang tidak bisa berubah-ubah sedangkan Statefull Widget sebaliknya. Keduanya sangat mudah dipahami karena pengertiannya saling bertolak belakang. Penggunaan kedua widget ini sangat tergantung pada kebutuhan aplikasi. Dan seringnya, keduanya digunakan dalam satu file dart.
 
-This project is a starting point for a Flutter application.
+## Fungsi dari setState()
 
-A few resources to get you started if this is your first Flutter project:
+## Perbedaan antara const dengan final
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Implementasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
