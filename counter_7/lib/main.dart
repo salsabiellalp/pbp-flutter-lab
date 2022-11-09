@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(left: 30.0),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          if (_counter >= 0) ...[
+          if (_counter != 0) ...[
             FloatingActionButton(
               onPressed: _decrementCounter,
               tooltip: 'Decrement',
