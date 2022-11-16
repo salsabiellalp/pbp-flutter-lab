@@ -30,3 +30,33 @@ final dan const merupakan keyword yang dapat digunakan untuk membuat variabel ya
  - Menambah container padding yang berisi button untuk increase dan decrease counter
  - Untuk bonus, gunakan kondisi ```if (_counter != 0) ...``` di button dengan action ```_decreaseCounter``` agar    button tidak muncul saat counter = 0 
 
+
+# Tugas 8
+
+## Perbedaan ```Navigator.push``` dan ```Navigator.pushReplacement```
+```Navigator.push``` akan menampilkan layar lain di atas layar saat ini karena perintah tersebut menambahkan satu route/page ke top of stack Navigator sehingga kita dapat kembali ke layar sebelumnya. sedangkan ```Navigator.pushReplacement``` akan menggantikan layar yang sedang ditampilkan dengan layar lain. Artinya, kita tidak dapat kembali ke page sebelumnya.
+
+## widget apa saja yang dipakai di proyek kali ini dan fungsinya
+- Drawer : Widget ini digunakan untuk membuat hamburger menu pada sisi kiri appbar yang dapat digunakan untuk navigasi.
+- SizedBox : Widget ini dapat digunakan sebagai container dari layout lain dengan ukuran tertentu.
+- ListView : Widget ini dapat digunakan untuk menampilkan children widget dalam sebuah list. Artinya, children widget dapat di-scroll.
+- ListTile : Widget ini merupakan widget yang dapat menampilkan 1-3 baris teks dalam sebuah list.
+- TextFormField : Widget untuk menerima input teks.
+- DropdownButton : Widget untuk menampilkan pilihan input.
+- OutlinedButton, TextButton : Widget untuk membuat input berupa tombol.
+- Icon : Widget untuk menampilkan ikon.
+- Padding, EdgeInsets : Widget untuk mengatur padding dari suatu widget.
+
+## jenis-jenis event yang ada pada Flutter.
+- onTap: event terjadi saat widget di tap
+- onPressed: event terjadi saat widget di tekan
+- onChanged: event terjadi saat widget diubah
+- onSaved: event terjadi saat widget disimpan
+
+## cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Keitka kita menjalankan navigator push, screen baru akan ditambahkan ke stack sehingga screen sebelumnya tertimpa dengan screen yang baru (Note: kalau memakai push replacement, screen sebelumnya seolah olah di pop terlebih dahulu baru di-push). Screen yang di push akan berada di paling atas stack, sehingga screen seolah olah berganti dan dapat dilihat oleh user.
+
+## Implementasi
+- Membuat tiga tombol navigasi pada drawer
+- Membuat halaman form
+- Membuat halaman data budget
