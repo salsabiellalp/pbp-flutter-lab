@@ -57,6 +57,8 @@ final dan const merupakan keyword yang dapat digunakan untuk membuat variabel ya
 Keitka kita menjalankan navigator push, screen baru akan ditambahkan ke stack sehingga screen sebelumnya tertimpa dengan screen yang baru (Note: kalau memakai push replacement, screen sebelumnya seolah olah di pop terlebih dahulu baru di-push). Screen yang di push akan berada di paling atas stack, sehingga screen seolah olah berganti dan dapat dilihat oleh user.
 
 ## Implementasi
-- Membuat tiga tombol navigasi pada drawer
-- Membuat halaman form
-- Membuat halaman data budget
+- Membuat drawer yang telah direfaktor menjadi beda file, yakni ```drawer.dart```.
+- Menambahkan tiga route baru, pada drawer tersebut dengan widget ```ListTile``` dengan event handler ```onTap()``` yang akan melakukan operasi ```Navigator.push``` ataupun ```Navigator.pushReplacement```.
+- Membuat form pada ```budget_form.dart``` dengan menggunakan widget ```Form``` yang berisi widget-widget form field seperti ```TextFormField``` dan ```DropdownButtonFormField```.
+- Membuat class ```Budget``` pada ```models.dart``` yang merepresentasikan data budget. Class tersebut memanfaatkan static list untuk mempermudah pengaksesan data.
+- Menampilkan data budget pada ```budget_data.dart``` dengan memanfaatkan ```ListView.builder``` yang berisi widget ```Card``` sebagai container masing-masing data budget.
