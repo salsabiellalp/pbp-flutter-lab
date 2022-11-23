@@ -60,3 +60,24 @@ Keitka kita menjalankan navigator push, screen baru akan ditambahkan ke stack se
 - Membuat form pada ```budget_form.dart``` dengan menggunakan widget ```Form``` yang berisi widget-widget form field seperti ```TextFormField``` dan ```DropdownButtonFormField```.
 - Membuat class ```Budget``` pada ```models.dart``` yang merepresentasikan data budget. Class tersebut memanfaatkan static list untuk mempermudah pengaksesan data.
 - Menampilkan data budget pada ```budget_data.dart``` dengan memanfaatkan ```ListView.builder``` yang berisi widget ```Card``` sebagai container masing-masing data budget.
+
+
+# Tugas 9
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa, yaitu dengan memanfaatkan ```jsonDecode()``` dari ```dart:convert```. Namun, cara tersebut kurang efisien secara waktu dan memori, best practicenya pengambilan json dilakukan dengan membuat model terlebih dahulu karena selain dari struktur yang lebih rapih, menggunakan model juga akan memastikan tipe data setiap field model kita sesuai sehingga akan mempermudah pekerjaan kita kedepannya.
+
+## Widget yang dipakai
+- ```FutureBuilder```: Widget yang digunakan untuk menampilkan data yang akan diambil dari web service oleh Future.
+- ```CheckboxListTile```: Widget yang menampilkan checkbox dengan title dan subtitle.
+- ```InkWell```: Widget yang memiliki atribut event handler onTap(), juga memiliki efek ketika widget ditekan.
+
+## Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
+Data json didapatkan dengan melakukan fetch pada method yang ada di file fetchMyWatchlist.dart. Setelah itu, data yang telah di fetch akan di convert berdasarkan kode yang ada di model/mywatchlist.dart.
+
+## Implementasi
+- Tambahkan navigasi baru pada drawer kepada aplikasi Watch List dengan menambahkan widget ListTile dan event handler onTap() yang akan melakukan operasi Navigator.pushReplacement.
+- Buat model WatchList.
+- Membuat halaman yang menampilkan data Watch List dengan menggunakan widget FutureBuilder yang akan menampilkan data dari endpoint json tugas 3 PBP.
+- Membuat navigasi baru pada setiap film di halaman Watch List yang akan mengarah ke halaman detail film jika diklik dengan bantuan widget ListTile dan event handler onTap() yang akan melakukan operasi Navigator.push.
+- Membuat halaman detail film dengan menggunakan widget FutureBuilder yang akan menampilkan detail dari watch list yang telah diklik, juga tombol untuk kembali pada halaman watch list dengan bantuan widget TextButton dan event handler onPressed() yang akan melakukan operasi Navigator.pop.
+- Menambahkan checkbox dengan widget CheckboxListTile untuk menandakan apakah film tersebut sudah ditonton atau belum, dengan event handler onChanged() yang akan melakukan operasi setState() untuk mengubah nilai watched pada model WatchList.
