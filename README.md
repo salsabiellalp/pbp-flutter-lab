@@ -64,16 +64,16 @@ Keitka kita menjalankan navigator push, screen baru akan ditambahkan ke stack se
 
 # Tugas 9
 ## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
-Bisa, yaitu dengan memanfaatkan ```jsonDecode()``` dari ```dart:convert```. Namun, cara tersebut kurang efisien secara waktu dan memori, best practicenya pengambilan json dilakukan dengan membuat model terlebih dahulu karena selain dari struktur yang lebih rapih, menggunakan model juga akan memastikan tipe data setiap field model kita sesuai sehingga akan mempermudah pekerjaan kita kedepannya.
+Bisa, yaitu dengan memanfaatkan ```jsonDecode()``` dari ```dart:convert```. Namun, cara tersebut kurang efisien secara waktu dan memori. Best practicenya, pengambilan json dilakukan dengan membuat model terlebih dahulu karena selain dari struktur yang lebih rapih, menggunakan model juga akan memastikan tipe data setiap field model kita sesuai sehingga akan mempermudah pekerjaan kita kedepannya.
 
 ## Widget yang dipakai
 - ```FutureBuilder```: Widget yang digunakan untuk menampilkan data yang akan diambil dari web service oleh Future.
-- CheckBox : untuk membuat form boolean toggle dengan checkbox (mengubah status watched)
-- ListView : untuk menampilkan children widget yang tersimpan dalam sebuah list (menampilkan data film)
-- EdgeInsets : untuk mengatur padding dari suatu widget
+- ```CheckBox``` : untuk membuat form boolean toggle dengan checkbox (mengubah status watched)
+- ```ListView``` : untuk menampilkan children widget yang tersimpan dalam sebuah list (menampilkan data film)
+- ```EdgeInsets``` : untuk mengatur padding dari suatu widget
 
 ## Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
-Data json didapatkan dengan melakukan fetch pada method yang ada di file fetchMyWatchlist.dart. Setelah itu, data yang telah di fetch akan di convert berdasarkan kode yang ada di model/mywatchlist.dart.
+Data json didapatkan dengan melakukan fetch pada method yang ada di file fetchMyWatchlist.dart. Setelah itu, data yang telah di fetch akan di convert berdasarkan kode yang ada di ```model/mywatchlist.dart```.
 
 ## Implementasi
 - Menambahkan button untuk navigasi ke halaman watchlist pada list hamburger
