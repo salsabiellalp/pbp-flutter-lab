@@ -1,64 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/form.dart';
-import 'package:counter_7/dataBudget.dart';
-import 'package:counter_7/models.dart';
+import 'package:counter_7/page/budget.dart';
+import 'package:counter_7/page/form.dart';
+import 'package:counter_7/page/my_watch_list_page.dart';
 
-class MyDrawer extends StatefulWidget {
-  const MyDrawer({super.key});
-
-  @override
-  State<MyDrawer> createState() => _MyDrawerState();
-}
-
-class _MyDrawerState extends State<MyDrawer> {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          const SizedBox(
-            height: 100,
-            child: DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Tugas PBP'),
-            ),
-          ),
-          ListTile(
-            title: const Text('counter_7'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const MyHomePage(
-                          title: 'Program Counter',
-                        )),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Tambah Budget'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const BudgetForm()),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Data Budget'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const BudgetData()),
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
+Drawer getDrawer(BuildContext context) {
+  return Drawer(
+    child: Column(
+      children: [
+        // Menambahkan clickable menu
+        ListTile(
+          title: const Text('counter_7'),
+          onTap: () {
+            // Route menu ke halaman utama
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const MyHomePage()),
+            );
+          },
+        ),
+        ListTile(
+          title: const Text('Tambah Budget'),
+          onTap: () {
+            // Route menu ke halaman form
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const MyFormPage()),
+            );
+          },
+        ),
+        ListTile(
+          title: const Text('Data Budget'),
+          onTap: () {
+            // Route menu ke halaman tampilin data
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const BudgetPage()),
+            );
+          },
+        ),
+        ListTile(
+          title: const Text('My WatchList'),
+          onTap: () {
+            // Route menu ke halaman my watchlist
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const MyWatchListPage()),
+            );
+          },
+        ),
+      ],
+    ),
+  );
 }
