@@ -68,16 +68,18 @@ Bisa, yaitu dengan memanfaatkan ```jsonDecode()``` dari ```dart:convert```. Namu
 
 ## Widget yang dipakai
 - ```FutureBuilder```: Widget yang digunakan untuk menampilkan data yang akan diambil dari web service oleh Future.
-- ```CheckboxListTile```: Widget yang menampilkan checkbox dengan title dan subtitle.
-- ```InkWell```: Widget yang memiliki atribut event handler onTap(), juga memiliki efek ketika widget ditekan.
+- CheckBox : untuk membuat form boolean toggle dengan checkbox (mengubah status watched)
+- ListView : untuk menampilkan children widget yang tersimpan dalam sebuah list (menampilkan data film)
+- EdgeInsets : untuk mengatur padding dari suatu widget
 
 ## Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
 Data json didapatkan dengan melakukan fetch pada method yang ada di file fetchMyWatchlist.dart. Setelah itu, data yang telah di fetch akan di convert berdasarkan kode yang ada di model/mywatchlist.dart.
 
 ## Implementasi
-- Tambahkan navigasi baru pada drawer kepada aplikasi Watch List dengan menambahkan widget ListTile dan event handler ```onTap()``` yang akan melakukan operasi ```Navigator.pushReplacement```.
-- Buat model WatchList.
-- Membuat halaman yang menampilkan data Watch List dengan menggunakan widget FutureBuilder yang akan menampilkan data dari endpoint json tugas 3 PBP.
-- Membuat navigasi baru pada setiap film di halaman Watch List yang akan mengarah ke halaman detail film jika diklik dengan bantuan widget ListTile dan event handler ```onTap()``` yang akan melakukan operasi Navigator.push.
-- Membuat halaman detail film dengan menggunakan widget FutureBuilder yang akan menampilkan detail dari watch list yang telah diklik, juga tombol untuk kembali pada halaman watch list dengan bantuan widget TextButton dan event handler ```onPressed()``` yang akan melakukan operasi```Navigator.pop.```
-- Menambahkan checkbox dengan widget CheckboxListTile untuk menandakan apakah film tersebut sudah ditonton atau belum, dengan event handler ```onChanged()``` yang akan melakukan operasi ```setState()``` untuk mengubah nilai watched pada model WatchList.
+- Menambahkan button untuk navigasi ke halaman watchlist pada list hamburger
+- Membuat model MyWatchList dari QuickType lalu dibuat file .dart nya di dalam folder model
+- Membuat file my_watch_list_page.dart yang berisi method fetch data dan untuk menampilkan data-data tersebut nantinya
+- Melakukan fetching data JSON dari link json heroku dan diconvert ke objek MyWatchList
+- Menampilkan data-data yg didapat dengan ListView
+- Menambahkan event onTap, jika card film tersebut diklik maka akan mengarah ke page detail dari film tersebut
+- Membuat file untuk menampilkan halaman detail yg berisi detail filmnya dan button untuk kembali ke halaman watchlist
